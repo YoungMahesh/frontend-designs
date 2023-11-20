@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h3 {
+  @apply text-2xl;
+  @apply font-bold;
+  @apply leading-8;
+}
+
+.sidebar1 {
+  background: linear-gradient(
+    161.47deg,
+    #050c2e,
+    #354386 37.91%,
+    #050c2e 101.51%
+  );
+}
