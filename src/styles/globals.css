@@ -74,3 +74,8 @@ h3 {
 .border-blue-1 {
   border: 1px solid rgba(29, 161, 242, 0.26);
 }
+
+/* ._loading_overlay_overlay {
+  //  use this if overlay is wrapped around a component, you want background `blank` instead of `partially transparent`
+  background-color: black !important;   
+} */

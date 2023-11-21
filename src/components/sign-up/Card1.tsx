@@ -34,7 +34,7 @@ export default function Card1({
             </h5>
           </div>
         </div>
-        <Image src="/twitter.svg" width={37} height={42} alt="twitter" />
+        <Image src="/twitter.svg" width={37} height={37} alt="twitter" />
       </CardHeader>
       <CardBody className="px-3 py-2 text-small text-white">
         {tweetContent.map((text, idx) => (
