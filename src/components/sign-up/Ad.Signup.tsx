@@ -19,7 +19,8 @@ export default function AdSignup() {
         <div className="w-slider mt-10 text-white">
           <Slider1 />
         </div>
-        <div className="m-auto mt-10 flex flex-col items-center">
+        <div className="m-auto mt-20 flex flex-col items-center">
+          <p className="text-sm">Loved by top startups ❤️</p>
           <Image
             src={"/loved-by-startups.png"}
             width={420}
@@ -29,6 +30,11 @@ export default function AdSignup() {
           />
         </div>
       </div>
+      <img
+        className="bg-gradient-1"
+        src="/backgrounds/gradient-1.svg"
+        alt="gradient-1"
+      />
     </div>
   );
 }

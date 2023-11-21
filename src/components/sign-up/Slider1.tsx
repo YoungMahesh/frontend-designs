@@ -1,6 +1,36 @@
-import React, { Component } from "react";
+import React, {
+  Component,
+  type MouseEventHandler,
+  type CSSProperties,
+} from "react";
 import Slider from "react-slick";
 import Card1 from "./Card1";
+// import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+
+function SampleNextArrow({
+  className,
+  style,
+  onClick,
+}: {
+  className?: string;
+  style?: CSSProperties;
+  onClick?: MouseEventHandler<HTMLDivElement>;
+}) {
+  return <div className={className} style={{ ...style }} onClick={onClick} />;
+}
+
+function SamplePrevArrow({
+  className,
+  style,
+  onClick,
+}: {
+  className?: string;
+  style?: CSSProperties;
+  onClick?: MouseEventHandler<HTMLDivElement>;
+}) {
+  return <div className={className} style={{ ...style }} onClick={onClick} />;
+}
+
 export default class Slider1 extends Component {
   render() {
     const settings = {
@@ -11,6 +41,8 @@ export default class Slider1 extends Component {
       slidesToScroll: 1,
       autoplaySpeed: 2000,
       autoplay: true,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
     };
 
     return (

@@ -34,7 +34,17 @@ h3 {
   position: relative;
   height: 100%;
   z-index: 0;
-  background: url("/x-background.svg") 90% -90px / auto 110% no-repeat;
+  background: url("/backgrounds/x-background.svg") 90% -90px / auto 110% no-repeat;
+}
+
+.bg-gradient-1 {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: -5%;
+  transform: translate(-50%);
+  width: 100%;
+  z-index: -1;
 }
 
 .bg-sidebar {
@@ -47,9 +57,20 @@ h3 {
 }
 
 .w-slider {
-  width: 400px;
+  width: 520px;
 }
 
 .blue-1 {
   color: #7fb2f9;
+}
+
+.bg-blue-1 {
+  background-color: #2d3a76;
+}
+.bg-blue-2 {
+  background-color: #111739;
+}
+
+.border-blue-1 {
+  border: 1px solid rgba(29, 161, 242, 0.26);
 }

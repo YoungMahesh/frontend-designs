@@ -10,6 +10,7 @@
     "format": "npx prettier -w src/ README.md"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "@nextui-org/react": "^2.2.9",
     "@t3-oss/env-nextjs": "^0.7.0",
     "framer-motion": "^10.16.5",
