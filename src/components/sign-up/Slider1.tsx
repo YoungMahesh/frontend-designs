@@ -35,11 +35,11 @@ export default class Slider1 extends Component {
   render() {
     const settings = {
       dots: true,
-      infinite: false,
+      infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 4000,
       autoplay: true,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,

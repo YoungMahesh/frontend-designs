@@ -45,7 +45,20 @@ export const companyTypes = [
 ];
 
 export default function SidebarSignup() {
+  const [name1, setName1] = useState("");
+  const [contact1, setContact1] = useState("");
   const [category1, setCategory1] = useState(new Set<string>([]));
+
+  const [isNameInvalid, setIsNameInvalid] = useState(false);
+  const [isContactInvalid, setIsContactInvalid] = useState(false);
+  const [isCategoryInvalid, setIsCategoryInvalid] = useState(false);
+
+  const verifyUserInfo = () => {
+    if (name1.length === 0) return setIsNameInvalid(true);
+    if (contact1.length === 0) return setIsContactInvalid(true);
+    if (category1.size === 0) return setIsCategoryInvalid(true);
+    alert("Form fields validated");
+  };
 
   return (
     <div className="bg-sidebar mr-auto min-h-screen w-full p-10 pt-16">
@@ -61,6 +74,13 @@ export default function SidebarSignup() {
           placeholder="Enter your full name"
           radius="none"
           classNames={{ inputWrapper: "bg-blue-1" }}
+          value={name1}
+          onValueChange={(newName1) => {
+            setIsNameInvalid(false);
+            setName1(newName1);
+          }}
+          isInvalid={isNameInvalid}
+          errorMessage={isNameInvalid ? "Please enter a valid name" : undefined}
         />
 
         <Input
@@ -75,18 +95,30 @@ export default function SidebarSignup() {
               <span className="text-small">+91</span>
             </div>
           }
+          value={contact1}
+          onValueChange={(newContact1) => {
+            setIsContactInvalid(false);
+            setContact1(newContact1);
+          }}
+          isInvalid={isContactInvalid}
+          errorMessage={
+            isContactInvalid ? "Please enter a valid contact number" : undefined
+          }
         />
 
         <Select
           labelPlacement={"outside"}
-          label="Buisness Category"
+          label="Business Category"
           placeholder="-- Select Option --"
           className="max-w-xs"
           radius="none"
           popoverProps={{ classNames: { content: "rounded-none" } }} // box of select-items
           classNames={{ trigger: "bg-blue-1" }}
           selectedKeys={category1}
-          onSelectionChange={(e) => setCategory1(e as Set<string>)}
+          onSelectionChange={(e) => {
+            setIsCategoryInvalid(false);
+            setCategory1(e as Set<string>);
+          }}
           selectorIcon={
             category1.size > 0 ? (
               <XMarkIcon
@@ -94,6 +126,10 @@ export default function SidebarSignup() {
                 onClick={() => setCategory1(new Set([]))}
               />
             ) : undefined
+          }
+          isInvalid={isCategoryInvalid}
+          errorMessage={
+            isCategoryInvalid ? "Please select a business category" : undefined
           }
         >
           {companyTypes.map((cType) => (
@@ -111,7 +147,12 @@ export default function SidebarSignup() {
           By signing up you agree to our privacy policy and terms of use.
         </p>
         <div>
-          <Button color="primary" radius="none" className="w-full font-bold">
+          <Button
+            color="primary"
+            radius="none"
+            className="w-full font-bold"
+            onClick={verifyUserInfo}
+          >
             Continue &nbsp; &gt;
           </Button>
           <div className="mt-2 p-4 text-center">
