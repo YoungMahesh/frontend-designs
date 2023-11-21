@@ -1,6 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.grid-1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+h2 {
+  font-size: 28px;
+  @apply font-bold;
+  @apply leading-8;
+}
 
 h3 {
   @apply text-2xl;
@@ -8,7 +24,15 @@ h3 {
   @apply leading-8;
 }
 
-.sidebar1 {
+.bg-x {
+  /* display: block; */
+  position: relative;
+  height: 100%;
+  z-index: 0;
+  background: url("/x-background.svg") 90% -90px / auto 110% no-repeat;
+}
+
+.bg-sidebar {
   background: linear-gradient(
     161.47deg,
     #050c2e,
@@ -16,3 +40,10 @@ h3 {
     #050c2e 101.51%
   );
 }
+
+.blue-1 {
+  color: #7fb2f9;
+}
+/* .blue-2 {
+  color: rgb(43, 133, 243);
+} */
