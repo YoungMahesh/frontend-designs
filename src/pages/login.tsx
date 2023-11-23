@@ -1,9 +1,9 @@
 import Head from "next/head";
 import AdSignup from "~/components/sign-up/Ad.Signup";
-import SidebarSignup from "~/components/sign-up/Sidebar.Signup";
 import LoadingOverlay from "react-loading-overlay-ts";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import SidebarLogin from "~/components/login/Sidebar.Login";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,9 +46,9 @@ export default function Home() {
           }
         ></LoadingOverlay>
       ) : (
-        <main className="grid-1">
-          <SidebarSignup />
+        <main className="grid-2">
           <AdSignup />
+          <SidebarLogin />
         </main>
       )}
     </>

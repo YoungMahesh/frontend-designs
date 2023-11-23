@@ -12,10 +12,17 @@ export default function Home() {
       </Head>
 
       <main className="grid min-h-screen place-items-center">
-        <div>
-          <Link href="/signup" className="text-2xl text-white underline">
-            Razorpay Signup
-          </Link>
+        <div className="grid gap-8">
+          <p>
+            <Link href="/login" className="text-2xl text-white underline">
+              RazorpayX Login
+            </Link>
+          </p>
+          <p>
+            <Link href="/signup" className="text-2xl text-white underline">
+              RazorpayX Signup
+            </Link>
+          </p>
         </div>
       </main>
     </>

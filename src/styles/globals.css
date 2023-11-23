@@ -11,9 +11,14 @@ body {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
+.grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
 @media (max-width: 1023px) {
   /* we are hiding right-column from 1024px-above, hence giving all width to the left-column */
-  .grid-1 {
+  .grid-1,
+  .grid-2 {
     grid-template-columns: 1fr;
   }
 }
@@ -63,6 +68,9 @@ h3 {
 .blue-1 {
   color: #7fb2f9;
 }
+.blue-2 {
+  color: rgb(128, 179, 249);
+}
 
 .bg-blue-1 {
   background-color: #2d3a76;
@@ -74,7 +82,10 @@ h3 {
 .border-blue-1 {
   border: 1px solid rgba(29, 161, 242, 0.26);
 }
-
+.btn-blue-1 {
+  color: rgb(89, 160, 247);
+  border: 1px solid rgb(89, 160, 247);
+}
 /* ._loading_overlay_overlay {
   //  use this if overlay is wrapped around a component, you want background `blank` instead of `partially transparent`
   background-color: black !important;   

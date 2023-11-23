@@ -3,8 +3,8 @@ import { Input } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import { Link } from "@nextui-org/react";
+import { useRouter } from "next/router";
 import { useState } from "react";
-
 export const companyTypes = [
   {
     label: "Unregistered",
@@ -45,6 +45,7 @@ export const companyTypes = [
 ];
 
 export default function SidebarSignup() {
+  const router = useRouter();
   const [name1, setName1] = useState("");
   const [contact1, setContact1] = useState("");
   const [category1, setCategory1] = useState(new Set<string>([]));
@@ -156,7 +157,11 @@ export default function SidebarSignup() {
             Continue &nbsp; &gt;
           </Button>
           <div className="mt-2 p-4 text-center">
-            <Link className="blue-1 text-sm font-bold" href="#">
+            <Link
+              className="blue-1 text-sm font-bold"
+              href="#"
+              onClick={() => router.push("/login")}
+            >
               Login to a different account
             </Link>
           </div>
